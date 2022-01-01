@@ -4,6 +4,10 @@
 
 [![CC0-licensed](https://img.shields.io/github/license/bbnavi/gtfs-flex.svg)](LICENSE)
 
+This feed augments the official VBB data in the [DELFI](https://www.delfi.de) [GTFS dataset](https://de.data.public-transport.earth/gtfs-germany.zip) by adding these lines:
+
+- [RufBus line 476 in Angermünde](https://uvg-online.com/rufbus-angermuende/)
+
 
 ## Obtaining the feed
 
