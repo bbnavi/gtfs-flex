@@ -1,3 +1,5 @@
 route_id,service_id,trip_id,trip_headsign,trip_short_name,block_id,shape_id,wheelchair_accessible,bikes_allowed
 flex-476,flex-weekdays,flex-476-weekdays,RufBus 476,,,,,
 flex-476,flex-weekends,flex-476-weekends,RufBus 476,,,,,
+flex-477,flex-weekdays,flex-477-weekdays,RufBus 477,,,,,
+flex-477,flex-weekends,flex-477-weekends,RufBus 477,,,,,

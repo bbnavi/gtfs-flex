@@ -3,3 +3,7 @@ flex-476-weekdays,1,flex-476-stops,,,17:30:00,19:00:00,2,flächenrufbus-angermü
 flex-476-weekdays,2,flex-476-stops,,,19:00:00,22:00:00,2,flächenrufbus-angermünde-weekdays,2,flächenrufbus-angermünde-weekdays,RufBus 476
 flex-476-weekends,1,flex-476-stops,,,08:00:00,15:00:00,2,flächenrufbus-angermünde-weekends,2,flächenrufbus-angermünde-weekends,RufBus 476
 flex-476-weekends,2,flex-476-stops,,,15:00:00,22:00:00,2,flächenrufbus-angermünde-weekends,2,flächenrufbus-angermünde-weekends,RufBus 476
+flex-477-weekdays,1,flex-477-stops,,,17:30:00,19:00:00,2,flächenrufbus-angermünde-weekdays,2,flächenrufbus-angermünde-weekdays,RufBus 477
+flex-477-weekdays,2,flex-477-stops,,,19:00:00,22:00:00,2,flächenrufbus-angermünde-weekdays,2,flächenrufbus-angermünde-weekdays,RufBus 477
+flex-477-weekends,1,flex-477-stops,,,08:00:00,15:00:00,2,flächenrufbus-angermünde-weekends,2,flächenrufbus-angermünde-weekends,RufBus 477
+flex-477-weekends,2,flex-477-stops,,,15:00:00,22:00:00,2,flächenrufbus-angermünde-weekends,2,flächenrufbus-angermünde-weekends,RufBus 477
