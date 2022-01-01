@@ -1,2 +1,3 @@
 route_id,agency_id,route_short_name,route_long_name,route_type,route_desc
 flex-476,8583,476,RufBus 476,715,"Angermünde, Herzsprung, Bölkendorf, Schmargendorf, Zuchenberg, Altkünkendorf, Grumsin, Kerkow, Görlsdorf, Wolletz, Angermünde"
+flex-477,8583,477,RufBus 477,715,"Angermünde, Kerkow, Welsow, Bruchhagen, Greiffenberg, Biesenbrow, Leopoldsthal, Polßen, Schmiedeberg, Peetzig, Steinhöfel, Friedrichsfelde, Neuhaus, Wilmersdorf, Angermünde"
