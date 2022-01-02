@@ -7,7 +7,7 @@
 This feed augments the official VBB data in the [DELFI](https://www.delfi.de) [GTFS dataset](https://de.data.public-transport.earth/gtfs-germany.zip) by adding these lines:
 
 - [RufBus lines 476, 477 & 478 in Angermünde](https://uvg-online.com/rufbus-angermuende/)
-- [RufBus line 487 in Gartz](https://uvg-online.com/rufbus-gartz/)
+- [RufBus lines 487 & 488 in Gartz](https://uvg-online.com/rufbus-gartz/)
 
 
 ## Obtaining the feed
