@@ -12,8 +12,7 @@ This feed augments the official VBB data in the [DELFI](https://www.delfi.de) [G
 
 ## Obtaining the feed
 
-If you want to use this feed, just download [the repo as a ZIP archive](https://github.com/bbnavi/gtfs-flex/archive/refs/heads/main.zip).
-
+If you want to use this feed, download it from the [latest release](https://github.com/bbnavi/gtfs-flex/releases/latest).
 
 
 ## Building the feed
