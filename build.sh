@@ -58,11 +58,17 @@ if [ $nr_of_invalid_stops -gt 0 ]; then
 	exit 1
 fi
 
+# determine columns for stops.txt
+# remove columns referencing other (non-existent) files
+stops_columns=$(qsv headers -j gtfs/stops.txt \
+	| grep -v -x level_id \
+	| perl -pe 'chomp if eof' | tr '\r\n' ',')
+
 # keep all gtfs/stops.txt rows referenced in location_groups.txt
 qsv join --left \
 	location_id location_groups.txt \
 	stop_id gtfs/stops.txt \
-	| qsv select "$(head -n 1 gtfs/stops.txt | tr -d '\r\n')" \
+	| qsv select "$stops_columns" \
 	| qsv dedup -s stop_id \
 	>stops.txt
 
