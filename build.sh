@@ -58,6 +58,19 @@ if [ $nr_of_invalid_stops -gt 0 ]; then
 	exit 1
 fi
 
+# todo: is location_type=4 (boarding area) invalid?
+invalid_loc_types='^[123]$'
+invalid_stops=$(qsv join --left \
+	location_id location_groups.txt \
+	stop_id gtfs/stops.txt \
+	| qsv search -s location_type "$invalid_loc_types")
+nr_of_invalid_stops="$(echo -n $(echo "$invalid_stops" | tail -n +2 | wc -l))"
+if [ $nr_of_invalid_stops -gt 0 ]; then
+	1>&2 echo "there are $nr_of_invalid_stops location_groups.txt rows whose stop has an invalid location_type:"
+	1>&2 echo "$invalid_stops"
+	exit 1
+fi
+
 # determine columns for stops.txt
 # remove columns referencing other (non-existent) files
 stops_columns=$(qsv headers -j gtfs/stops.txt \
