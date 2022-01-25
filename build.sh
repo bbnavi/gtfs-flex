@@ -89,6 +89,12 @@ echo 'done!'
 
 
 
+echo_heading 'creating gtfs-flex.zip'
+zip -j -9 -q gtfs-flex.zip *.txt
+ls -lh gtfs-flex.zip
+
+
+
 # echo_heading 'validating GTFS feed'
 
 # Google's GTFS Validator doesn't seem to have a Docker image.
