@@ -58,8 +58,9 @@ if [ $nr_of_invalid_stops -gt 0 ]; then
 	exit 1
 fi
 
-# todo: is location_type=4 (boarding area) invalid?
-invalid_loc_types='^[123]$'
+# location_type=[123] is invalid with GTFS-Flex
+# OTP does not accept location_type=4 (boarding area)
+invalid_loc_types='^[1234]$'
 invalid_stops=$(qsv join --left \
 	location_id location_groups.txt \
 	stop_id gtfs/stops.txt \
