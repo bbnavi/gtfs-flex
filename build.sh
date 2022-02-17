@@ -10,17 +10,19 @@ function echo_heading () {
 
 
 
-echo_heading 'downloading & extracting the DELFI GTFS feed'
+echo_heading 'downloading & extracting the DELFI.BB GTFS feed'
 
-wget -c -N -q 'https://de.data.public-transport.earth/gtfs-germany.zip'
+# This GTFS feed is built using gtfs-hub:
+# https://github.com/mfdz/gtfs-hub/blob/d1338336ccecd884a727f7efe60fa4263513be6a/makefile#L25-L27
+wget -c -N -q 'https://gtfs.mfdz.de/DELFI.BB.gtfs.zip'
 
-unzip -o -j -q -d gtfs gtfs-germany.zip agency.txt
-unzip -o -j -q -d gtfs gtfs-germany.zip stops.txt
+unzip -o -j -q -d gtfs DELFI.BB.gtfs.zip agency.txt
+unzip -o -j -q -d gtfs DELFI.BB.gtfs.zip stops.txt
 
 echo 'done!'
 
 
-echo_heading 'generating agency.txt from DELFI GTFS'
+echo_heading 'generating agency.txt from DELFI.BB GTFS'
 
 invalid_routes=$(qsv join --left \
 	agency_id routes.txt \
@@ -45,7 +47,7 @@ echo 'done!'
 
 
 
-echo_heading 'generating stops.txt from DELFI GTFS'
+echo_heading 'generating stops.txt from DELFI.BB GTFS'
 
 invalid_stops=$(qsv join --left \
 	location_id location_groups.txt \
@@ -74,9 +76,11 @@ fi
 
 # determine columns for stops.txt
 # remove columns referencing other (non-existent) files
-stops_columns=$(qsv headers -j gtfs/stops.txt \
+# put stop_id first manually
+stops_columns="stop_id,$(qsv headers -j gtfs/stops.txt \
+	| grep -v -x stop_id \
 	| grep -v -x level_id \
-	| perl -pe 'chomp if eof' | tr '\r\n' ',')
+	| perl -pe 'chomp if eof' | tr '\r\n' ',')"
 
 # keep all gtfs/stops.txt rows referenced in location_groups.txt
 qsv join --left \

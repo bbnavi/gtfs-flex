@@ -1,7 +1,7 @@
 .DS_Store
 Thumbs.db
 
-/gtfs-germany.zip
+/*.gtfs.zip
 /gtfs
 
 /gtfs-flex.zip
