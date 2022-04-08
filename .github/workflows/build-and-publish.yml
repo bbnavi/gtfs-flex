@@ -1,0 +1,51 @@
+name: build and publish on opendata.bbnavi.de
+
+on:
+  schedule:
+    # every day at 2:40
+    - cron:  '40 2 * * *'
+  # todo: remove
+  push:
+    branches:
+      - 'publish'
+
+jobs:
+  # todo: DRY with build.yml
+  build:
+    name: build GTFS-Flex feed
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: install qsv
+      run: ./ci/install-qsv.sh
+
+    - run: ./build.sh
+    - name: store gtfs-flex.zip as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: gtfs-flex
+        path: |
+          index.html
+          gtfs-flex.zip
+        retention-days: 1
+
+  publish:
+    name: publish feed on opendata.bbnavi.de
+    needs: [build]
+    runs-on: ubuntu-latest
+    env:
+      MC_IMAGE:
+    steps:
+      # todo
+      - name: restore gtfs-flex.zip
+        uses: actions/download-artifact@v3
+        with:
+          name: gtfs-flex
+      - name: publish to opendata.bbnavi.docker
+        run: |
+          docker run \
+            --rm -i -v $PWD:/data \
+            -e "MC_HOST_bbnavi=https://${{ secrets.MINIO_ACCESS_KEY }}:${{ secrets.MINIO_SECRET_KEY }}@opendata.bbnavi.de" \
+            minio/mc:RELEASE.2022-04-07T21-43-27Z \
+            cp /data/index.html /data/gtfs-flex.zip bbnavi/vbb-gtfs-flex/

@@ -9,6 +9,7 @@ on:
       - '*'
 
 jobs:
+  # todo: DRY with build-and-publish.yml
   build:
     runs-on: ubuntu-latest
     steps:
