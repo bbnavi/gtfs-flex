@@ -109,3 +109,8 @@ ls -lh gtfs-flex.zip
 # GTFSVTOR doesn't support GTFS-Flex v2.
 # todo
 # docker run -it --rm -v $PWD:/gtfs mfdz/gtfsvtor -o /gtfs/validation-results.html /gtfs
+
+
+echo_heading 'generating index.html'
+cat index.template.html \
+	>index.html
