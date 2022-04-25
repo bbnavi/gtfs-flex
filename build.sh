@@ -112,5 +112,7 @@ ls -lh gtfs-flex.zip
 
 
 echo_heading 'generating index.html'
+dataset_version="$(date "+%Y-%m-%d")"
 cat index.template.html \
+	| sed "s/{{dataset_version}}/$dataset_version/" \
 	>index.html

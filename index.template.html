@@ -7,6 +7,47 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>experimenteller GTFS-Flex-Feed des VBB</title>
+	<!-- todo: add spatialCoverage.geo: {@type: GeoShape, box: …} -->
+	<!-- todo: spatialCoverage: add metadata like ISO code, Wikidata ID -->
+	<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "Dataset",
+			"name": "experimenteller GTFS-Flex-Feed des VBB",
+			"description": "GTFS-Flex-Datensatz für den Verkehrsverbund Berlin-Brandenburg.",
+			"keywords": [
+				"GTFS",
+				"GTFS-Flex",
+				"demand responsive",
+				"transit",
+				"mobility"
+			],
+			"creator": {
+				"@type": "Organization",
+				"name": "DigitalAgentur Brandenburg GmbH",
+				"url": "https://www.digital-agentur.de"
+			},
+			"publisher": {
+				"@type": "Organization",
+				"name": "DigitalAgentur Brandenburg GmbH",
+				"url": "https://www.digital-agentur.de"
+			},
+			"license": "https://creativecommons.org/publicdomain/zero/1.0/",
+			"spatialCoverage": {
+				"@type": "Place",
+				"name": "Brandenburg"
+			},
+			"version": "{{dataset_version}}",
+			"distribution": [
+				{
+					"@type": "DataDownload",
+					"name": "GTFS-Flex",
+					"contentUrl": "gtfs-flex.zip",
+					"encodingFormat": "application/zip"
+				}
+			]
+		}
+	</script>
 	<style type="text/css">
 		body {
 			margin: 1rem;
