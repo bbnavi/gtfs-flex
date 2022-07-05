@@ -109,3 +109,10 @@ ls -lh gtfs-flex.zip
 # GTFSVTOR doesn't support GTFS-Flex v2.
 # todo
 # docker run -it --rm -v $PWD:/gtfs mfdz/gtfsvtor -o /gtfs/validation-results.html /gtfs
+
+
+echo_heading 'generating index.html'
+dataset_version="$(date "+%Y-%m-%d")"
+cat index.template.html \
+	| sed "s/{{dataset_version}}/$dataset_version/" \
+	>index.html

@@ -4,10 +4,6 @@ on:
   schedule:
     # every day at 2:40
     - cron:  '40 2 * * *'
-  # todo: remove
-  push:
-    branches:
-      - 'publish'
 
 jobs:
   # todo: DRY with build.yml
@@ -21,7 +17,7 @@ jobs:
       run: ./ci/install-qsv.sh
 
     - run: ./build.sh
-    - name: store gtfs-flex.zip as artifact
+    - name: build feed & store as artifact
       uses: actions/upload-artifact@v3
       with:
         name: gtfs-flex
@@ -37,8 +33,7 @@ jobs:
     env:
       MC_IMAGE:
     steps:
-      # todo
-      - name: restore gtfs-flex.zip
+      - name: restore built feed
         uses: actions/download-artifact@v3
         with:
           name: gtfs-flex
