@@ -5,7 +5,7 @@ set -o pipefail
 # set -x
 
 function echo_heading () {
-	echo -e "\n\n$(tput bold)$1$(tput sgr0)\n"
+	echo -e "\n\n$(tput -T xterm bold)$1$(tput -T xterm sgr0)\n"
 }
 
 
@@ -28,7 +28,7 @@ invalid_routes=$(qsv join --left \
 	agency_id routes.txt \
 	agency_id gtfs/agency.txt \
 	| qsv search -s 'agency_id[1]' '^$')
-nr_of_invalid_routes="$(echo -n $(echo "$invalid_routes" | tail -n +2 | wc -l))"
+nr_of_invalid_routes="$(echo -n $(echo "$invalid_routes" | qsv behead | wc -l))"
 if [ $nr_of_invalid_routes -gt 0 ]; then
 	1>&2 echo "there are $nr_of_invalid_routes routes.txt rows with invalid/unknown agency_id:"
 	1>&2 echo "$invalid_routes"
@@ -53,7 +53,7 @@ invalid_stops=$(qsv join --left \
 	location_id location_groups.txt \
 	stop_id gtfs/stops.txt \
 	| qsv search -s stop_id '^$')
-nr_of_invalid_stops="$(echo -n $(echo "$invalid_stops" | tail -n +2 | wc -l))"
+nr_of_invalid_stops="$(echo -n $(echo "$invalid_stops" | qsv behead | wc -l))"
 if [ $nr_of_invalid_stops -gt 0 ]; then
 	1>&2 echo "there are $nr_of_invalid_stops location_groups.txt rows with invalid/unknown location_id/stop_id:"
 	1>&2 echo "$invalid_stops"
@@ -67,7 +67,7 @@ invalid_stops=$(qsv join --left \
 	location_id location_groups.txt \
 	stop_id gtfs/stops.txt \
 	| qsv search -s location_type "$invalid_loc_types")
-nr_of_invalid_stops="$(echo -n $(echo "$invalid_stops" | tail -n +2 | wc -l))"
+nr_of_invalid_stops="$(echo -n $(echo "$invalid_stops" | qsv behead | wc -l))"
 if [ $nr_of_invalid_stops -gt 0 ]; then
 	1>&2 echo "there are $nr_of_invalid_stops location_groups.txt rows whose stop has an invalid location_type:"
 	1>&2 echo "$invalid_stops"
