@@ -4,9 +4,12 @@ set -e
 set -o pipefail
 set -x
 
-sudo apt install -y curl jq unzip
+sudo apt install -y \
+	curl jq unzip \
+	libpython3.10
 
-releases_url='https://api.github.com/repos/jqnatividad/qsv/releases/latest'
+qsv_release='78436643' # 0.69.0
+releases_url="https://api.github.com/repos/jqnatividad/qsv/releases/$qsv_release"
 assets_url="$(
 	curl "$releases_url" -H 'Accept: application/json' -L -s \
 	| jq -r '.assets_url'
