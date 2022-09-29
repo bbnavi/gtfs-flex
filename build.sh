@@ -27,7 +27,7 @@ echo_heading 'generating agency.txt from DELFI.BB GTFS'
 invalid_routes=$(qsv join --left \
 	agency_id routes.txt \
 	agency_id gtfs/agency.txt \
-	| qsv search -s 'agency_id[1]' '^$')
+	| qsv search -s 'agency_id[1]' '^$' 2>/dev/null || true)
 nr_of_invalid_routes="$(echo -n $(echo "$invalid_routes" | qsv behead | wc -l))"
 if [ $nr_of_invalid_routes -gt 0 ]; then
 	1>&2 echo "there are $nr_of_invalid_routes routes.txt rows with invalid/unknown agency_id:"
@@ -52,7 +52,7 @@ echo_heading 'generating stops.txt from DELFI.BB GTFS'
 invalid_stops=$(qsv join --left \
 	location_id location_groups.txt \
 	stop_id gtfs/stops.txt \
-	| qsv search -s stop_id '^$')
+	| qsv search -s stop_id '^$' 2>/dev/null || true)
 nr_of_invalid_stops="$(echo -n $(echo "$invalid_stops" | qsv behead | wc -l))"
 if [ $nr_of_invalid_stops -gt 0 ]; then
 	1>&2 echo "there are $nr_of_invalid_stops location_groups.txt rows with invalid/unknown location_id/stop_id:"
@@ -66,7 +66,7 @@ invalid_loc_types='^[1234]$'
 invalid_stops=$(qsv join --left \
 	location_id location_groups.txt \
 	stop_id gtfs/stops.txt \
-	| qsv search -s location_type "$invalid_loc_types")
+	| qsv search -s location_type "$invalid_loc_types" 2>/dev/null || true)
 nr_of_invalid_stops="$(echo -n $(echo "$invalid_stops" | qsv behead | wc -l))"
 if [ $nr_of_invalid_stops -gt 0 ]; then
 	1>&2 echo "there are $nr_of_invalid_stops location_groups.txt rows whose stop has an invalid location_type:"
