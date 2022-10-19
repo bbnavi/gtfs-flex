@@ -1,7 +1,7 @@
 stop_id,stop_name,parent_station,stop_desc,stop_lat,stop_lon,location_type,wheelchair_boarding,platform_code
+000000599901,"Schmargendorf, Hemme Milch",,,52.988365,13.9561,,,
 000008089127,Tantow(Gr),,,53.325756,14.414597,,,
 000300603005,"Tantow, Bahnhof",,Bushalt Bahnhofstraße vor Lindenallee,53.27056,14.350174,,1,
-000311952001,"Schmargendorf, Hemme Milch",,Schmargendorf Hemme Milch,52.988365,13.9561,,,
 de:12060:900350568::1,"Lüdersdorf (bei Oderberg), Dorf",,Bushalt Dorfstraße hinter Parsteiner Straße,52.933807,14.074315,,,
 de:12060:900350570::1,"Lüdersdorf (bei Oderberg), Abzweig Stolzenhagen",,Bushalt K 6014 vor Dorfstraße,52.935898,14.075959,,,
 de:12060:900350637::1,Parstein,,Bushalt Angermünder Straße vor Lüdersdorfer Straße,52.932983,14.036583,,,
