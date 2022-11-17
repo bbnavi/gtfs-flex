@@ -1,5 +1,4 @@
 stop_id,stop_name,parent_station,stop_desc,stop_lat,stop_lon,location_type,wheelchair_boarding,platform_code
-000000599901,"Schmargendorf, Hemme Milch",,,52.988365,13.9561,,,
 000008089127,Tantow(Gr),,,53.325756,14.414597,,,
 000300603005,"Tantow, Bahnhof",,Bushalt Bahnhofstraße vor Lindenallee,53.27056,14.350174,,1,
 de:12060:900350568::1,"Lüdersdorf (bei Oderberg), Dorf",,Bushalt Dorfstraße hinter Parsteiner Straße,52.933807,14.074315,,,
@@ -293,6 +292,7 @@ de:12073:900341055::2,"Schmargendorf, Kreuzung",,Bushalt B 2 Herzsprunger Weg Ri
 de:12073:900341056::1,"Schmargendorf, Mitte",,Bushalt Rotdornstraße hinter Zum Dorfanger,52.989273,13.954128,,,
 de:12073:900341057::1,"Schmargendorf, Siedlung",,Bushalt Zum Dorfanger vor Am Mühlenberg,52.978706,13.965088,,,
 de:12073:900341057::2,"Schmargendorf, Siedlung",,Bushalt Zum Dorfanger vor B 2,52.978455,13.966136,,,
+de:12073:900341058::1,"Schmargendorf, Hemme Milch",,Bushalt Heideweg vor Hemme Milch,52.97603,13.948582,,,
 de:12073:900341062::1,"Schmiedeberg, Ausbau",,Bushalt Chausseehaus vor Polßener Mühle Richtung Nordost,53.14965,13.965779,,,
 de:12073:900341062::2,"Schmiedeberg, Ausbau",,Bushalt Chauseehaus vor Polßener Mühle Richtung Südwest,53.149757,13.965733,,,
 de:12073:900341063::1,"Schmiedeberg, Mitte",,Bushalt B 198 vor Dorfstraße,53.142555,13.958031,,,
