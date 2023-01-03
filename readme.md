@@ -12,7 +12,11 @@
 
 ## Obtaining the feed
 
-If you want to use this feed, download it from the [latest release](https://github.com/bbnavi/gtfs-flex/releases/latest).
+If you want to use this feed, download it from [the respective `opendata.bbnavi.de` page](https://opendata.bbnavi.de/vbb-gtfs-flex/index.html):
+
+```shell
+wget 'https://opendata.bbnavi.de/vbb-gtfs-flex/gtfs-flex.zip'
+```
 
 
 ## Building the feed
