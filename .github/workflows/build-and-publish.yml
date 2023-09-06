@@ -9,9 +9,7 @@ jobs:
   # todo: DRY with build.yml
   build:
     name: build GTFS-Flex feed
-    # `ubuntu-latest` currently implies 20.04, which doesn't have Python 3.10
-    # yet, which is need for revent versions of qsv to work.
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
     - name: checkout
       uses: actions/checkout@v2
