@@ -43,5 +43,5 @@ jobs:
           docker run \
             --rm -i -v $PWD:/data \
             -e "MC_HOST_bbnavi=https://${{ secrets.MINIO_ACCESS_KEY }}:${{ secrets.MINIO_SECRET_KEY }}@opendata.bbnavi.de" \
-            minio/mc:RELEASE.2022-04-07T21-43-27Z \
+            minio/mc:RELEASE.2023-09-04T19-57-37Z \
             cp /data/index.html /data/gtfs-flex.zip bbnavi/vbb-gtfs-flex/
