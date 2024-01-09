@@ -1,6 +1,9 @@
 name: build and publish on opendata.bbnavi.de
 
 on:
+  push:
+    branches:
+      - '*'
   schedule:
     # every day at 2:40
     - cron:  '40 2 * * *'
